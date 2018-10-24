@@ -271,7 +271,135 @@ void enemyTurn()//enemies turn
 	}
 	checker();
 }
-
+void infoBag()//displays info about the battle
+{
+	cout << "\nWelcome to your info bag" << endl;
+	cout << "your name = " << name << " enemy name = " << enemyName << endl;
+	cout << "your hp = " << hp << " enemy hp = " << enemyHp << endl;
+	cout << "your stamina = " << stamina << " enemy stamina = " << enemyStamina << endl;
+	cout << "your mana = " << mp << " enemy mana = " << enemyMana << endl;
+	cout << "your AD = " << ad << " enemy AD = " << enemyAttackDmg << endl;
+	cout << "your AP = " << ap << " enemy AP = " << enemyMagicDmg << endl;
+	cout << "your Armor = " << armor << " enemy Armor = " << enemyArmor << endl;
+	cout << "your MR = " << mr << " enemy Armor = " << enemyMr << endl;
+	cout << "your Agility = " << agility << " enemy Agility = " << enemyAgility << endl;
+	cout << "your luck = " << luck << " enemy luck = " << enemyLuck << endl;
+	item = getItem(0);
+	if (item == true)
+	{
+		cout << "You have a hp potion you can use" << endl;
+		infoBag();
+	}
+	else
+	{
+		cout << "You have no hp potions" << endl;
+		infoBag();
+	}
+	item = getItem(1);
+	if (item == true)
+	{
+		cout << "You have a stamina potion you can use" << endl;
+		infoBag();
+	}
+	else
+	{
+		cout << "You have no stamina potions" << endl;
+		infoBag();
+	}
+	item = getItem(2);
+	if (item == true)
+	{
+		cout << "You have a mana potion you can use" << endl;
+		infoBag();
+	}
+	else
+	{
+		cout << "You have no mana potions" << endl;
+		infoBag();
+	}
+	do
+	{
+		cout << "what would you like to do?: " << endl;
+		cout << "1. use hp potion" << endl;
+		cout << "2. use stamina potion" << endl;
+		cout << "3. use mana potion" << endl;
+		cout << "4. go back to battle" << endl;
+		cout << "5. end program" << endl;
+	} while (input < 1 || input > 5);
+	if (input == 1)
+	{
+		if (hp == maxHp)
+		{
+			cout << "your hp is already full" << endl;
+			infoBag();
+		}
+		item = getItem(0);
+		if (item == true)
+		{
+			setItem(0, false);
+			if (hp < maxHp - 25)
+			{
+				hp = maxHp;
+			}
+			else
+			{
+				hp = hp + 25;
+			}
+		}
+		else
+		{
+			cout << "You have no hp potions" << endl;
+		}
+		infoBag();
+	}
+	else if (input == 2)
+	{
+		if (stamina == maxStamina)
+		{
+			cout << "your stamina is already full" << endl;
+			infoBag();
+		}
+		item = getItem(1);
+		if (item == true)
+		{
+			stamina = stamina + 1;
+			infoBag();
+		}
+		else
+		{
+			cout << "You have no stamina potions" << endl;
+		}
+		infoBag();
+	}
+	else if (input == 3)
+	{
+		if (mp == maxMp)
+		{
+			cout << "your mana is already full" << endl;
+			infoBag();
+		}
+		item = getItem(2);
+		if (item == true)
+		{
+			setItem(2, false);
+			mp = mp + 1;
+			infoBag();
+		}
+		else
+		{
+			cout << "You have no mana potions" << endl;
+		}
+		infoBag();
+	}
+	else if (input == 4)
+	{
+		playerTurn();
+	}
+	else
+	{
+		endProgram();
+	}
+}
 void playerTurn()//players turn
 {
 	do
@@ -369,127 +497,7 @@ void playerTurn()//players turn
 	}
 }
 
-void infoBag()//displays info about the battle
-{
-	cout << "\nWelcome to your info bag" << endl;
-	cout << "your name = " << name << " enemy name = " << enemyName << endl;
-	cout << "your hp = " << hp << " enemy hp = " << enemyHp << endl;
-	cout << "your stamina = " << stamina << " enemy stamina = " << enemyStamina << endl;
-	cout << "your mana = " << mp << " enemy mana = " << enemyMana << endl;
-	cout << "your AD = " << ad << " enemy AD = " << enemyAttackDmg << endl;
-	cout << "your AP = " << ap << " enemy AP = " << enemyMagicDmg << endl;
-	cout << "your Armor = " << armor << " enemy Armor = " << enemyArmor << endl;
-	cout << "your MR = " << mr << " enemy Armor = " << enemyMr << endl;
-	cout << "your Agility = " << agility << " enemy Agility = " << enemyAgility << endl;
-	cout << "your luck = " << luck << " enemy luck = " << enemyLuck << endl;
-	item = getItem(0);
-	if (item == true)
-	{
-		cout << "You have a hp potion you can use" << endl;
-	}
-	else
-	{
-		cout << "You have no hp potions" << endl;
-	}
-	item = getItem(1);
-	if (item == true)
-	{
-		cout << "You have a stamina potion you can use" << endl;
-	}
-	else
-	{
-		cout << "You have no stamina potions" << endl;
-	}
-	item = getItem(2);
-	if (item == true)
-	{
-		cout << "You have a mana potion you can use" << endl;
-	}
-	else
-	{
-		cout << "You have no mana potions" << endl;
-	}
-	do
-	{
-		cout << "what would you like to do?: " << endl;
-		cout << "1. use hp potion" << endl;
-		cout << "2. use stamina potion" << endl;
-		cout << "3. use mana potion" << endl;
-		cout << "4. go back to battle" << endl;
-		cout << "5. end program" << endl;
-	} while (input < 1 || input > 5);
-	if (input == 1)
-	{
-		if (hp == maxHp)
-		{
-			cout << "your hp is already full" << endl;
-			infoBag();
-		}
-		item = getItem(0);
-		if (item == true)
-		{
-			setItem(0, false);
-			if (hp < maxHp - 25)
-			{
-				hp = maxHp;
-			}
-			else
-			{
-				hp = hp + 25;
-			}
-		}
-		else
-		{
-			cout << "You have no hp potions" << endl;
-		}
-		infoBag();
-	}
-	else if (input == 2)
-	{
-		if (stamina == maxStamina)
-		{
-			cout << "your stamina is already full" << endl;
-			infoBag();
-		}
-		item = getItem(1);
-		if (item == true)
-		{
-			stamina = stamina + 1;
-		}
-		else
-		{
-			cout << "You have no stamina potions" << endl;
-		}
-		infoBag();
-	}
-	else if (input == 3)
-	{
-		if (mp == maxMp)
-		{
-			cout << "your mana is already full" << endl;
-			infoBag();
-		}
-		item = getItem(2);
-		if (item == true)
-		{
-			setItem(2, false);
-			mp = mp + 1;
-		}
-		else
-		{
-			cout << "You have no mana potions" << endl;
-		}
-		infoBag();
-	}
-	else if (input == 4)
-	{
-		playerTurn();
-	}
-	else
-	{
-		endProgram();
-	}
-}
+
 
 int attack()//uses a for loop to make attacking easier
 {
