@@ -288,34 +288,28 @@ void infoBag()//displays info about the battle
 	if (item == true)
 	{
 		cout << "You have a hp potion you can use" << endl;
-		infoBag();
 	}
 	else
 	{
 		cout << "You have no hp potions" << endl;
-		infoBag();
 	}
 	item = getItem(1);
 	if (item == true)
 	{
 		cout << "You have a stamina potion you can use" << endl;
-		infoBag();
 	}
 	else
 	{
 		cout << "You have no stamina potions" << endl;
-		infoBag();
 	}
 	item = getItem(2);
 	if (item == true)
 	{
 		cout << "You have a mana potion you can use" << endl;
-		infoBag();
 	}
 	else
 	{
 		cout << "You have no mana potions" << endl;
-		infoBag();
 	}
 	do
 	{
@@ -325,6 +319,7 @@ void infoBag()//displays info about the battle
 		cout << "3. use mana potion" << endl;
 		cout << "4. go back to battle" << endl;
 		cout << "5. end program" << endl;
+		cin >> input;
 	} while (input < 1 || input > 5);
 	if (input == 1)
 	{
