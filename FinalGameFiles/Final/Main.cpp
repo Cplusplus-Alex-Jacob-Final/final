@@ -18,9 +18,15 @@ void wizard()//Wizard class
 	luck = 10;
 	do
 	{
+		cout << " Your a wizard Harry! :D" << endl;
+		cout << "\n" << endl;
 		cout << "What type of wizard are you?: " << endl;
-		cout << "Fire.1, Ice.2, or End Program.3?: " << endl;
+		cout << "1. Fire\n2. Ice\n3. Loser " << endl;
+		cout << "\n";
+		cout << "Enter Number Here --> ";
 		cin >> input;
+		cout << "\n";
+
 	} while (input < 1 || input > 3);
 	if(input == 1)//fire subclass
 	{
@@ -49,9 +55,13 @@ void thief()//thief class
 	luck = 15;
 	do
 	{
-		cout << "What type of thief are you?: " << endl;
-		cout << "Archer.1, Assassin.2, or End program.3?: " << endl;
+		cout << "What type of thief are you? " << endl;
+		cout << "1. Archer\n2. Assassin\n3. Loser " << endl;
+		cout << "\n";
+		cout << "Enter Number Here --> ";
 		cin >> input;
+		cout << "\n";
+
 	} while (input < 1 || input > 3);
 	if (input == 1)//archer subclass
 	{
@@ -80,9 +90,13 @@ void warrior()//warrior class
 	luck = 10;
 	do
 	{
-		cout << "What type of warrior are you?: " << endl;
-		cout << "Fighter.1, Tank.2, or End proram.3?: " << endl;
+		cout << "What type of warrior are you? " << endl;
+		cout << "1. Fighter\n2. Tank\n3. Loser " << endl;
+		cout << "\n";
+		cout << "Enter Number Here --> ";
 		cin >> input;
+		cout << "\n";
+
 	} while (input < 1 || input > 3);
 	if (input == 1)//fighter subclass
 	{
@@ -102,10 +116,15 @@ int main()//start of program
 {
 	cout << "What is your name?: " << endl;
 	cin >> name;
+	cout << "\n";
 	do
 	{
-		cout << "are you a wizard.1 thief.2, warrior.3, or End program.4?: ";
+		cout << "What class sounds cool to you? :\n1. Wizard\n2. Thief\n3. Warrior\n4. Loser " << endl;
+		cout << "\n";
+		cout << "Enter Number Here --> ";
 		cin >> input;
+		cout << "\n";
+
 	} while (input < 1 || input > 4);
 	if (input == 1)//wizard class
 	{

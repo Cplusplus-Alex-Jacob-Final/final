@@ -32,7 +32,7 @@ int bonuslvl2Wins = 0;
 int gold = 0;
 int lvl = 0;
 //Battle Variables
-string enemyName;// 0      1      2       3     4       5    6       7      8      9      10     11     12    13      14    15      16
+string enemyName;//  0      1      2      3      4      5      6      7      8      9      10     11     12     13     14     15     16
 bool items[17] = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
 int attackNum = 0;
 int enemyAgility = 0;

@@ -34,9 +34,10 @@ void lvlChooser()//allows the player to choose a area they wish to go to
 	do
 	{
 		cout << "\n";
-		cout << "Lives: " << lives << endl;
-		cout << "Choose a area to go to: " << endl;
-		cout << "9. Info/Shop: Buy Items and see stats, your gold: " << gold << endl;
+		cout << "Lives: " << lives << " || Gold: " << gold << endl;
+		cout << "\n";
+		cout << "Choose an area to go to: " << endl;
+		cout << "9. Info/Shop: Buy Items and See Your Stats" << endl;
 		cout << "1. Level 1: " << lvl1Wins << "/3 100g, 100xp" << endl;
 		cout << "2. Level 2: " << lvl2Wins << "/3 200g, 200xp" << endl;
 		cout << "3. Level 3: " << lvl3Wins << "/3 300g, 300xp" << endl;
@@ -44,12 +45,17 @@ void lvlChooser()//allows the player to choose a area they wish to go to
 		cout << "5. Final Boss: " << finalBossWins << "/1 1000g, 1000xp" << endl;
 		cout << "6. Bonus lvl1: " << bonuslvl1Wins << "/1 500g, 500xp" << endl;
 		cout << "7. Bonus lvl2: " << bonuslvl2Wins << "/1 800g, 800xp" << endl;
-		cout << "8. Bonus Final Boss: " << bonusBossWins << "/1 1000g, 1000xp";
+		cout << "8. Bonus Final Boss: " << bonusBossWins << "/1 1000g, 1000xp" << endl;
 		cout << "0. End the program" << endl;
+		cout << "Enter a number here --> ";
 		cin >> input;
+		cout << "\n";
 	} while (input < 0 || input > 9);
-
-	if (input == 1)
+	if (input == 0)
+	{
+		endProgram();
+	}
+	else if (input == 1)
 	{
 		if (lvl1Wins < 3)
 		{
